@@ -3,7 +3,6 @@ import { fileURLToPath } from 'node:url';
 import { resolve } from 'node:path';
 import { access } from 'node:fs/promises';
 import Fastify from 'fastify';
-import fastifyStatic from '@fastify/static';
 import rateLimit from '@fastify/rate-limit';
 import { createPublicClient, createWalletClient, decodeFunctionData, defineChain, http, isAddress, isHex, parseEther, type Address, type Hex } from 'viem';
 import { privateKeyToAccount } from 'viem/accounts';
@@ -73,7 +72,7 @@ server.post<{ Body: { data: string; target?: 'registry' | 'approvals' } }>('/api
     return { hash };
   });
   // Return the broadcast hash immediately; keep later sends serialized until this nonce is mined.
-  queue = work.then(({ hash }) => client.waitForTransactionReceipt({ hash, timeout: 120000 })).catch(() => {});
+  queue = (serverless ? work : work.then(({ hash }) => client.waitForTransactionReceipt({ hash, timeout: 120000 }))).catch(() => {});
   try { return await work; }
   catch (error) {
     const reason = error instanceof Error ? error.name : 'UnknownError';
@@ -83,6 +82,7 @@ server.post<{ Body: { data: string; target?: 'registry' | 'approvals' } }>('/api
   }
 });
 if (process.env.SERVE_WEB === '1') {
+  const { default: fastifyStatic } = await import('@fastify/static');
   const webRoot = resolve(root, 'apps/web/dist');
   await access(resolve(webRoot, 'index.html'));
   await server.register(fastifyStatic, { root: webRoot, dotfiles: 'deny' });

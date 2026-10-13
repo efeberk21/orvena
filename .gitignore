@@ -157,3 +157,5 @@ deployments/31337.json
 deployments/integration-31337.json
 deployments/approvals-31337.json
 deployments/approval-integration-31337.json
+.vercel
+.env*

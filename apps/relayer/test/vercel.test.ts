@@ -5,8 +5,7 @@ process.env.ORVENA_DEPLOYMENT = 'vercel';
 process.env.VITE_CHAIN_ID = '10143';
 process.env.APP_ORIGIN = 'https://orvena.test';
 process.env.RELAYER_READ_ONLY = '1';
-const { default: api } = await import('../src/vercel.js');
-const { default: server } = await import('../src/index.js');
+const { default: api, server } = await import(process.env.TEST_BUNDLED_API === '1' ? '../dist/vercel.bundle.mjs' : '../src/vercel.js');
 after(() => server.close());
 
 test('serverless health exposes public configuration without a signing key', async () => {

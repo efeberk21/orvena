@@ -1,5 +1,6 @@
 import { isIP } from 'node:net';
 import server from './index.js';
+export { server };
 
 export default {
   async fetch(request: Request): Promise<Response> {

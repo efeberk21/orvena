@@ -1,0 +1,9 @@
+{
+  "chainId": 10143,
+  "address": "0x20e98ECE51fAfF6b5baf3197f6e085cc180D0E2F",
+  "initialFundingTestMON": "1",
+  "fundingHash": "0x4a0529dc08ede7a8ed767131dc11f7fbb4e601a956cd7a77e9ccfe695680d4f8",
+  "origin": "https://orvena.vercel.app",
+  "fundedAt": "2026-10-13T23:29:52.780Z",
+  "note": "Dedicated bounded testnet sponsor. No automatic refill."
+}

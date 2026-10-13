@@ -2,7 +2,9 @@ import { execFileSync } from 'node:child_process';
 import { readFile } from 'node:fs/promises';
 import { parse } from 'dotenv';
 let env = {};
-try { env = parse(await readFile('.env', 'utf8')); } catch {}
+for (const file of ['.env', '.env.local', '.local/vercel.env']) {
+  try { env = { ...env, ...parse(await readFile(file, 'utf8')) }; } catch {}
+}
 const secrets = Object.entries(env).filter(([key, value]) => /PRIVATE_KEY|TOKEN|SECRET|PASSWORD/.test(key) && value.length >= 24).map(([, value]) => value);
 const files = new Set(execFileSync('git', ['ls-files', '-z', '--cached', '--others', '--exclude-standard'], { encoding: 'utf8' }).split('\0').filter(Boolean));
 for (const file of files) {

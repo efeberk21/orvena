@@ -1,0 +1,39 @@
+{
+  "chainId": 10143,
+  "registry": "0x105a31bbd4ddb181ade5b0ce7835df27b93a182f",
+  "approvals": "0x542ed99e33509dfecc7c4fc2d5293bf427cf91ba",
+  "owner": "0x9DF0054C24f8A6EE367F1380F49D20EAd47F92c0",
+  "checkedAt": "2026-10-13T23:37:06.948Z",
+  "fixture": "synthetic P256 keys, not physical passkeys",
+  "transactionHashes": [
+    "0xde3584d2586e4ae80177ff6ae6ac393807c5b491bcec92eaa9837347ec15a6e2",
+    "0xa50f7e33e8e344be67c6cc67797e3b3ed2982460b4e22979897ef851dae86432",
+    "0x7e3ed2c07ffdf4f08baa0d896e849ffc538a36a0e73437a35da62f656101f76e",
+    "0x2d987c14ae39c88d13f3fe675824605617e619faeaf82735b2da798c95a6d8aa"
+  ],
+  "approvalPackage": {
+    "schema": "orvena.approval.v1",
+    "chainId": 10143,
+    "contract": "0x542ed99e33509dfecc7c4fc2d5293bf427cf91ba",
+    "owner": "0x9DF0054C24f8A6EE367F1380F49D20EAd47F92c0",
+    "approvalId": "0x7e4cb799614d5fbf915499f4f354c6ef15712b7331972f3c42827c721359f56a",
+    "salt": "0xe19cd1d2100a872a4730a23b67f83aa514636fdfcf18f21972709e37ce509949"
+  },
+  "content": "Orvena synthetic AI publishing integration. Exact version one.",
+  "nextApprovalId": "0xeec7d2108291e8b6667d71fa391d312192984b996220bcdb8ccb1c69a0bb0cba",
+  "checks": [
+    "registration",
+    "approve",
+    "exact-content",
+    "content-change-rejected",
+    "unexpected-approver-rejected",
+    "wrong-contract-rejected",
+    "replay-rejected",
+    "version-lineage",
+    "revocation",
+    "revised-version-still-valid",
+    "wrong-origin-rejected",
+    "legacy-sponsor-action-rejected"
+  ],
+  "apiOrigin": "https://orvena-ashy.vercel.app"
+}

@@ -8,7 +8,9 @@ import { generatePrivateKey, privateKeyToAccount } from 'viem/accounts';
 import { approvalProtocol, approvalsAbi, contentCommitment, createApprovalReader, createRegistryReader, hashProfile, registryAbi, registryDomain, registryTypes, zeroApprovalId, type ApprovalPackage } from '@orvena/sdk';
 const local = process.argv.includes('--local');
 config({ path: local ? '.env.sandbox' : '.env', quiet: true });
-const base = local ? 'http://localhost:3002' : 'http://localhost:3001';
+const remote = process.argv.find(arg => arg.startsWith('--url='))?.slice(6);
+if (remote && (local || !/^https:\/\/[^/]+$/.test(remote))) throw new Error('Remote integration requires an HTTPS origin and Monad testnet.');
+const base = remote || (local ? 'http://localhost:3002' : 'http://localhost:3001');
 const health = await (await fetch(`${base}/api/health`)).json();
 assert.equal(health.chainId, local ? 31337 : 10143); assert.ok(health.sponsorshipReady && health.approvals && health.registry);
 const origin = health.origin;
@@ -63,5 +65,5 @@ assert.equal((await reader.verifyApproval({ content, approvalPackage: proof, exp
 assert.equal((await reader.verifyApproval({ content: revised, approvalPackage: { ...proof, approvalId: nextId, salt: salt2 }, expectedOwner: owner.address })).status, 'valid');
 p256Secret.fill(0);
 const evidence = { chainId: health.chainId, registry: health.registry, approvals: health.approvals, owner: owner.address, checkedAt: new Date().toISOString(), fixture: 'synthetic P256 keys, not physical passkeys', transactionHashes: hashes, approvalPackage: proof, content, nextApprovalId: nextId, checks: ['registration', 'approve', 'exact-content', 'content-change-rejected', 'unexpected-approver-rejected', 'wrong-contract-rejected', 'replay-rejected', 'version-lineage', 'revocation', 'revised-version-still-valid', 'wrong-origin-rejected', 'legacy-sponsor-action-rejected'] };
-await writeFile(`deployments/approval-integration-${health.chainId}.json`, JSON.stringify(evidence, null, 2));
+await writeFile(`deployments/approval-integration-${remote ? 'vercel-' : ''}${health.chainId}.json`, JSON.stringify({ ...evidence, apiOrigin: base }, null, 2));
 console.log(JSON.stringify(evidence, null, 2));

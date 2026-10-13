@@ -11,7 +11,7 @@
     "dev:example": "npm run dev -w @orvena/dapp",
     "dev:api": "npm run dev -w @orvena/relayer",
     "demo": "powershell -NoProfile -File scripts/start-demo.ps1",
-    "build": "npm run build -w @orvena/sdk && npm run build -w @orvena/web && npm run build -w @orvena/relayer && npm run build -w @orvena/dapp",
+    "build": "npm run build -w @orvena/sdk && npm run build -w @orvena/web && npm run build -w @orvena/relayer && node scripts/build-api.mjs && npm run build -w @orvena/dapp",
     "pretypecheck": "npm run build -w @orvena/sdk",
     "typecheck": "npm run typecheck --workspaces --if-present",
     "compile": "npm run compile -w @orvena/contracts",
@@ -39,6 +39,7 @@
     "@types/node": "^24.0.0",
     "concurrently": "^9.2.1",
     "dotenv": "^17.2.3",
+    "esbuild": "0.28.2",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3"
   }
