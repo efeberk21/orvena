@@ -1,0 +1,9 @@
+{
+  "name": "@orvena/sdk", "version": "0.1.0", "private": true, "type": "module",
+  "exports": { ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" } },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": ["dist", "README.md"],
+  "scripts": { "build": "node ../../scripts/clean-dist.mjs sdk && tsc", "typecheck": "tsc --noEmit", "test": "tsx --test test/*.test.ts" },
+  "dependencies": { "viem": "^2.47.6" }
+}

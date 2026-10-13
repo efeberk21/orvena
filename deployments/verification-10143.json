@@ -1,0 +1,21 @@
+{
+  "isJobCompleted": true,
+  "verificationId": "d71305e3-fc9c-4eb2-818d-a9e4fe2a4df4",
+  "jobStartTime": "2026-10-13T15:42:18Z",
+  "jobFinishTime": "2026-10-13T15:42:22Z",
+  "compilationTime": "3545",
+  "externalVerifications": {
+    "etherscan": {
+      "error": "Daily limit of 500 source code submissions reached"
+    }
+  },
+  "contract": {
+    "match": "exact_match",
+    "creationMatch": "exact_match",
+    "runtimeMatch": "exact_match",
+    "chainId": "10143",
+    "address": "0x105A31bBd4DdB181aDe5B0CE7835df27B93a182F",
+    "verifiedAt": "2026-10-13T15:42:22Z",
+    "matchId": "56057602"
+  }
+}

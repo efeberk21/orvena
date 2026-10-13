@@ -1,0 +1,21 @@
+{
+  "name": "@orvena/relayer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "node ../../scripts/clean-dist.mjs relayer && tsc",
+    "typecheck": "tsc --noEmit",
+    "start": "node dist/index.js",
+    "test": "tsx --test test/*.test.ts"
+  },
+  "dependencies": {
+    "@fastify/rate-limit": "^10.3.0",
+    "@fastify/static": "10.1.6",
+    "@orvena/sdk": "0.1.0",
+    "dotenv": "^17.2.3",
+    "fastify": "^5.6.1",
+    "viem": "^2.47.6"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "chainId": 10143,
+  "registry": "0x105a31bbd4ddb181ade5b0ce7835df27b93a182f",
+  "approvals": "0x542ed99e33509dfecc7c4fc2d5293bf427cf91ba",
+  "transactionHash": "0x437467c367d0c641c61c14adcc863e4fdf69745bb8ca52cff64282f1f5406563",
+  "block": "70771937",
+  "deployedAt": "2026-10-13T20:06:31.494Z",
+  "creationBytecodeHash": "0x13bbdfe5eaccb29a9c7fae7fb03401cb81635f390fc51490c24efdd4a7b25914",
+  "gasUsed": "1769260",
+  "effectiveGasPrice": "104000000000"
+}

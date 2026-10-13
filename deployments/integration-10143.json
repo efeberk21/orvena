@@ -1,0 +1,39 @@
+{
+  "chainId": 10143,
+  "registry": "0x105a31bbd4ddb181ade5b0ce7835df27b93a182f",
+  "owner": "0xbbfBF37302BaCCD97fedc0a5b513DfE776c4ACFe",
+  "fixture": "synthetic Mera signing and P256 assertion; not a real-device WebAuthn/PRF test",
+  "text": "I prefer concise answers with sources.",
+  "dataHash": "0xd89fb0a9e6b126c4cc0d24b1b3acc60c07313624be122ea2449c37f5429665a7",
+  "receipts": [
+    {
+      "label": "Profile created",
+      "hash": "0x23998005ff0d057bf646989a55a8f3f3ec7c2e39c88a171dff0fd6c1dc885dbe",
+      "fee": "0.035136144",
+      "elapsedMs": 1323.7286999999997,
+      "block": "70718917"
+    },
+    {
+      "label": "Profile updated",
+      "hash": "0xd7363b3409fc53316effcbd398148828f04612599cdfd0f78f66d050c6d89319",
+      "fee": "0.008576364",
+      "elapsedMs": 916.9153000000001,
+      "block": "70718921"
+    },
+    {
+      "label": "P256 proof verified",
+      "hash": "0x40226d90e7824eb55d0157a339f319a9bdd72650b1e7c660daf7aebb7f383a07",
+      "fee": "0.010538334",
+      "elapsedMs": 930.7312999999995,
+      "block": "70718925"
+    },
+    {
+      "label": "Data receipt recorded",
+      "hash": "0x7afb4a69e26996907d8ad15170a3e3be72425fd9c0116977b0af05d699c481fc",
+      "fee": "0.010130436",
+      "elapsedMs": 875.1226000000006,
+      "block": "70718929"
+    }
+  ],
+  "verifiedAt": "2026-10-13T15:37:06.264Z"
+}

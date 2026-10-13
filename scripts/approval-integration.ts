@@ -1,0 +1,67 @@
+import assert from 'node:assert/strict';
+import { config } from 'dotenv';
+import { writeFile } from 'node:fs/promises';
+import { randomBytes } from 'node:crypto';
+import { p256 } from '@noble/curves/nist.js';
+import { concatHex, encodeFunctionData, hexToBytes, sha256, stringToHex, toHex, type Address, type Hex } from 'viem';
+import { generatePrivateKey, privateKeyToAccount } from 'viem/accounts';
+import { approvalProtocol, approvalsAbi, contentCommitment, createApprovalReader, createRegistryReader, hashProfile, registryAbi, registryDomain, registryTypes, zeroApprovalId, type ApprovalPackage } from '@orvena/sdk';
+const local = process.argv.includes('--local');
+config({ path: local ? '.env.sandbox' : '.env', quiet: true });
+const base = local ? 'http://localhost:3002' : 'http://localhost:3001';
+const health = await (await fetch(`${base}/api/health`)).json();
+assert.equal(health.chainId, local ? 31337 : 10143); assert.ok(health.sponsorshipReady && health.approvals && health.registry);
+const origin = health.origin;
+const rpcUrl = process.env.MONAD_RPC_URL;
+const reader = createApprovalReader({ address: health.approvals, chainId: health.chainId, rpcUrl });
+const registry = createRegistryReader({ address: health.registry, chainId: health.chainId, rpcUrl });
+const owner = privateKeyToAccount(generatePrivateKey());
+const p256Secret = randomBytes(32), pub = p256.getPublicKey(p256Secret, false);
+const block = await reader.client.getBlock();
+const now = BigInt(Math.floor(Date.now() / 1000));
+const deadline = (local && now > block.timestamp ? now : block.timestamp) + 600n;
+const input = { name: 'Synthetic integration', bio: '', avatar: zeroApprovalId, qx: toHex(pub.slice(1, 33)), qy: toHex(pub.slice(33)), rpIdHash: sha256(stringToHex(new URL(origin).hostname)), origin };
+const hashes: Hex[] = [];
+async function relay(data: Hex, target: 'registry' | 'approvals', expected = 200, suppliedOrigin = origin) {
+  const response = await fetch(`${base}/api/relay`, { method: 'POST', headers: { 'Content-Type': 'application/json', Origin: suppliedOrigin }, body: JSON.stringify({ data, target }) });
+  const body = await response.json(); assert.equal(response.status, expected, JSON.stringify(body));
+  if (expected !== 200) return;
+  assert.match(body.hash, /^0x[0-9a-fA-F]{64}$/); const hash = body.hash as Hex;
+  assert.equal((await reader.client.waitForTransactionReceipt({ hash })).status, 'success');
+  const tx = await reader.client.getTransaction({ hash }); assert.equal(tx.input.toLowerCase(), data.toLowerCase()); assert.equal(tx.to?.toLowerCase(), (target === 'registry' ? health.registry : health.approvals).toLowerCase()); assert.equal(tx.value, 0n); hashes.push(hash);
+}
+function assertion(challenge: Hex) {
+  const json = JSON.stringify({ type: 'webauthn.get', challenge: Buffer.from(hexToBytes(challenge)).toString('base64url'), origin, crossOrigin: false });
+  const data = concatHex([input.rpIdHash, '0x05', '0x00000000']);
+  const sig = p256.sign(hexToBytes(sha256(concatHex([data, sha256(stringToHex(json))]))), p256Secret, { prehash: false, lowS: true });
+  return { auth: { r: toHex(sig.slice(0, 32)), s: toHex(sig.slice(32)), challengeIndex: BigInt(json.indexOf('"challenge"')), typeIndex: BigInt(json.indexOf('"type"')), authenticatorData: data, clientDataJSON: json }, originIndex: BigInt(json.indexOf('"origin"')) };
+}
+const sig = await owner.signTypedData({ domain: registryDomain(health.chainId, health.registry), types: registryTypes, primaryType: 'CreateProfile', message: { owner: owner.address, profileHash: hashProfile(input), nonce: 0n, deadline } });
+const registration = encodeFunctionData({ abi: registryAbi, functionName: 'createProfile', args: [owner.address, input, deadline, sig] });
+await relay(registration, 'registry', 403, 'https://evil.example'); await relay(registration, 'registry');
+// Legacy generic content write is no longer a sponsor action.
+await relay(encodeFunctionData({ abi: registryAbi, functionName: 'recordData', args: [owner.address, zeroApprovalId, deadline, sig] }), 'registry', 400);
+const content = 'Orvena synthetic AI publishing integration. Exact version one.';
+const salt = toHex(randomBytes(32)), commitment = contentCommitment(content, salt);
+const id = await reader.approvalChallenge(owner.address, commitment, zeroApprovalId, deadline);
+const p = assertion(id);
+const approve = encodeFunctionData({ abi: approvalsAbi, functionName: 'approveContent', args: [owner.address, commitment, zeroApprovalId, deadline, p.auth, p.originIndex] });
+await relay(encodeFunctionData({ abi: approvalsAbi, functionName: 'approveContent', args: [owner.address, contentCommitment('Altered version', salt), zeroApprovalId, deadline, p.auth, p.originIndex] }), 'approvals', 422);
+await relay(approve, 'approvals'); await relay(approve, 'approvals', 422);
+const proof: ApprovalPackage = { schema: approvalProtocol, chainId: health.chainId, contract: health.approvals, owner: owner.address, approvalId: id, salt };
+assert.equal((await reader.verifyApproval({ content, approvalPackage: proof, expectedOwner: owner.address })).status, 'valid');
+assert.equal((await reader.verifyApproval({ content: content + '!', approvalPackage: proof, expectedOwner: owner.address })).status, 'content-mismatch');
+assert.equal((await reader.verifyApproval({ content, approvalPackage: proof, expectedOwner: health.registry as Address })).status, 'wrong-approver');
+await assert.rejects(reader.verifyApproval({ content, approvalPackage: { ...proof, contract: health.registry }, expectedOwner: owner.address }));
+const revised = content + ' Revised with a second approval.', salt2 = toHex(randomBytes(32)), commitment2 = contentCommitment(revised, salt2);
+const nextId = await reader.approvalChallenge(owner.address, commitment2, id, deadline), next = assertion(nextId);
+await relay(encodeFunctionData({ abi: approvalsAbi, functionName: 'approveContent', args: [owner.address, commitment2, id, deadline, next.auth, next.originIndex] }), 'approvals');
+assert.equal((await reader.getApproval(nextId)).parentId, id);
+const revoke = assertion(await reader.revocationChallenge(owner.address, id, deadline));
+await relay(encodeFunctionData({ abi: approvalsAbi, functionName: 'revokeApproval', args: [id, deadline, revoke.auth, revoke.originIndex] }), 'approvals');
+assert.equal((await reader.verifyApproval({ content, approvalPackage: proof, expectedOwner: owner.address })).status, 'revoked');
+assert.equal((await reader.verifyApproval({ content: revised, approvalPackage: { ...proof, approvalId: nextId, salt: salt2 }, expectedOwner: owner.address })).status, 'valid');
+p256Secret.fill(0);
+const evidence = { chainId: health.chainId, registry: health.registry, approvals: health.approvals, owner: owner.address, checkedAt: new Date().toISOString(), fixture: 'synthetic P256 keys, not physical passkeys', transactionHashes: hashes, approvalPackage: proof, content, nextApprovalId: nextId, checks: ['registration', 'approve', 'exact-content', 'content-change-rejected', 'unexpected-approver-rejected', 'wrong-contract-rejected', 'replay-rejected', 'version-lineage', 'revocation', 'revised-version-still-valid', 'wrong-origin-rejected', 'legacy-sponsor-action-rejected'] };
+await writeFile(`deployments/approval-integration-${health.chainId}.json`, JSON.stringify(evidence, null, 2));
+console.log(JSON.stringify(evidence, null, 2));

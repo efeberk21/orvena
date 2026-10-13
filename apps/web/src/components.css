@@ -1,0 +1,136 @@
+fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+textarea { resize: vertical; min-height: 96px; }
+fieldset:disabled { opacity: .7; }
+.counter,.invalid { float: right; font-weight: 400; font-size: 10px; }
+.invalid { color: #f0b3a7; }
+.field-help { font-size: 11px!important; line-height: 1.8!important; color: var(--muted); text-align: left; margin: 14px 0; }
+.avatar-picker { display: flex; gap: 16px; margin: 8px 0 20px; }
+.avatar-picker legend { font-size: 11px; margin-bottom: 13px; color: #cabaaa; }
+.color-choice { width: 34px; height: 34px; border: 2px solid transparent; border-radius: 50%; position: relative; display: block; cursor: pointer; margin: 0; }
+.color-choice:has(input:checked) { outline: 2px solid #dfc1a2; outline-offset: 4px; }
+.color-choice:has(input:focus-visible) { outline: 3px solid #f6ece2; outline-offset: 4px; }
+.color-choice input { position: absolute; opacity: 0; margin: 0; min-height: 0; width: 100%; height: 100%; cursor: pointer; }
+.lavender { background: #ceb9e7; color: #5c3a82; }
+.mint { background: #afcbbb; color: #355f48; }
+.sand { background: #d7c39f; color: #775731; }
+.rose { background: #d4afbb; color: #824857; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+.identity-actions .secondary { margin-top: 12px; }
+.verified { color: #b3d9bd; background: #b5d7bc0c; border: 1px solid #93bfa22b; padding: 8px 12px; border-radius: 8px; display: inline-block; }
+.public-link { margin-top: 19px; }
+.data-panel { background: var(--surface); border: 1px solid #ead3bd20; border-radius: 18px; padding: 25px; }
+.section-top { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.data-panel .eyebrow { font-size: 8px; letter-spacing: 1.4px; }
+.data-panel h2,.receipt-history h2 { font-size: 25px; font-weight: 450; letter-spacing: -.8px; line-height: 1.2; margin: 22px 0 14px; }
+.data-panel>p { font-size: 13px; color: #bbac9d; line-height: 1.8; }
+.data-panel form { margin-top: 23px; }
+.data-hash { font-size: 10px; display: block; overflow-wrap: anywhere; background: var(--surface-inset); padding: 13px; border-radius: 8px; text-align: left; line-height: 1.8; color: #d0bba6; }
+.upload-label { font-size: 11px; color: var(--muted); display: flex; justify-content: space-between; }
+.file-name { font-size: 11px; overflow-wrap: anywhere; color: #d1bda9; }
+input[type=file] { padding: 10px; min-height: 44px; font-size: 11px; }
+input[type=file]::file-selector-button { background: #dfc0a11a; color: #dfcdbb; border: 1px solid #dfc1a240; border-radius: 5px; padding: 7px 9px; margin-right: 10px; }
+.receipt-history { margin: 36px 0; }
+.receipt { background: var(--surface); border: 1px solid #ead3bd1c; border-radius: 11px; padding: 22px; margin: 12px 0; font-size: 12px; }
+.receipt>div:first-child { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.receipt strong { font-weight: 500; color: #e9dacb; }
+.receipt-check { color: #b4d7be; }
+.receipt-tag { font-size: 8px; letter-spacing: .7px; background: #ceb49a12; color: #d2bfac; padding: 5px 8px; border-radius: 5px; }
+.receipt>code { display: block; overflow-wrap: anywhere; font-size: 10px; color: #c0ad99; margin: 17px 0; }
+.receipt dl { display: flex; flex-wrap: wrap; gap: 30px; }
+.receipt dt { font-size: 10px; color: #baa591; }
+.receipt dd { margin: 5px 0 0; font-variant-numeric: tabular-nums; color: #dfcfbe; }
+.receipt>a { color: #e5ccb3; display: inline-block; margin-top: 10px; }
+.transaction-progress { display: flex; align-items: center; gap: 14px; margin: 30px 0; background: #d0b3950b; border: 1px solid #dec1a326; padding: 21px; border-radius: 12px; font-size: 13px; color: #dac3ac; }
+.transaction-progress>div { flex: 1; min-width: 0; }
+.transaction-progress code { display: block; overflow-wrap: anywhere; margin-top: 8px; font-size: 10px; }
+.status-dot { width: 6px; height: 6px; background: #dec1a3; border-radius: 50%; flex: none; }
+.transaction-progress ol { display: flex; gap: 8px; list-style: none; padding: 0; margin: 0; }
+.transaction-progress li { width: 24px; height: 24px; border: 1px solid #d6bba040; border-radius: 50%; display: grid; place-items: center; font-size: 9px; color: #b7a491; }
+.transaction-progress li.complete { background: #dfc2a4; color: #29231d; border-color: #dfc2a4; }
+.public-result { border-top: 1px solid var(--line); padding-top: 28px; margin-top: 30px; }
+.public-result h3 { font-size: 27px; letter-spacing: -.8px; font-weight: 450; margin: 12px 0; }
+.public-result>p { color: #ccbba9; font-size: 13px; }
+.public-result form { margin-top: 24px; }
+.ai-example { text-align: left; margin: 25px 0; padding: 18px; border: 1px solid #d3b4952b; background: #dcbc9b09; border-radius: 12px; }
+.ai-example .eyebrow { font-size: 8px; letter-spacing: 1.2px; }
+.ai-example p { font-size: 12px; color: #c6b5a4; line-height: 1.8; }
+.ai-example strong { display: block; margin-top: 19px; color: #e8d4c0; font-size: 15px; }
+.verification-result { padding: 18px; border-radius: 12px; text-align: left; margin-top: 24px; font-size: 13px; }
+.verification-result p { font-size: 12px; line-height: 1.7; }
+.verification-result.match { background: #b6d2b90b; border: 1px solid #92bd9f33; color: #bfdac6; }
+.verification-result.mismatch { background: #b290610c; border: 1px solid #bb915c38; color: #dfc49e; }
+.verification-result code + code { margin-top: 8px; }
+.public-reader>.fingerprint { display: grid; place-items: center; font-size: 27px; }
+.receipt-history .section-top h2 { margin: 0; }
+.identity-body label { display: flex; justify-content: space-between; gap: 10px; }
+.identity-body .color-choice { display: block; }
+.application-tools { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 30px; margin-top: 30px; }
+.activity-history { text-align: left; }
+.activity-history h2 { font-size: 24px; letter-spacing: -.7px; font-weight: 450; margin: 0 0 14px; }
+.activity-history .receipt code { display: block; overflow-wrap: anywhere; font-size: 10px; margin: 12px 0; }
+.activity-history summary { cursor: pointer; padding: 11px 0; color: #d0bba6; }
+.activity-history a { color: #e9d2ba; }
+.activity-history .receipt p { font-size: 11px; color: #bfac99; }
+.public-result .activity-history { margin-top: 32px; }
+.session-time { font-variant-numeric: tabular-nums; color: #c1ae9a; font-size: 11px; text-align: center; }
+.developer-steps { text-align: left; padding-left: 19px; font-size: 12px; color: #cbb8a4; line-height: 1.9; }
+.developer-steps li { padding: 5px 0; }
+.wallet-main { max-width: 1250px; margin: 0 auto; padding: 155px 5.3% 70px; }
+.wallet-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: start; margin-top: 45px; }
+.wallet-body { padding-top: 30px; }
+.wallet-body>p,.wallet-approval>p { font-size: 13px; line-height: 1.8; color: var(--muted); }
+.wallet-body h3 { font-size: 22px; font-weight: 450; letter-spacing: -.6px; margin: 25px 0 18px; }
+.wallet-balance { display: flex; align-items: baseline; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 15px 0; }
+.wallet-balance strong { font-size: 44px; letter-spacing: -1.8px; font-weight: 450; overflow-wrap: anywhere; }
+.wallet-balance span { font-size: 12px; color: var(--muted); }
+.wallet-controls { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; }
+.wallet-controls .text-button { margin: 0; padding: 9px; }
+.wallet-approval { border-top: 1px solid var(--line); margin-top: 25px; padding-top: 5px; text-align: left; }
+.requesting-app { text-align: left; border: 1px solid #dfc2a430; border-radius: 12px; padding: 18px; margin-bottom: 25px; background: #d7b8990b; }
+.requesting-app strong { display: block; font-weight: 500; overflow-wrap: anywhere; }
+.requesting-app code { display: block; color: #edd8c4; font-size: 12px; overflow-wrap: anywhere; margin: 10px 0 15px; }
+.wallet-approval pre { max-height: 360px; overflow: auto; white-space: pre-wrap; }
+.approval-details { font-size: 12px; }
+.approval-details>div { margin: 15px 0; }
+.approval-details dt { color: var(--muted); margin-bottom: 6px; }
+.approval-details dd { margin: 0; overflow-wrap: anywhere; color: #e7d8c9; font-variant-numeric: tabular-nums; }
+.wallet-connections { max-width: 680px; margin: 45px auto 0; }
+.wallet-connections summary { color: #e7cfb6; cursor: pointer; margin-bottom: 20px; font-size: 12px; }
+.wallet-connections details { margin-bottom: 24px; }
+.connected-dapp { text-align: left; margin: 20px 0; border-top: 1px solid var(--line); padding-top: 16px; }
+.connected-dapp code { display: block; font-size: 11px; overflow-wrap: anywhere; margin-top: 9px; color: var(--muted); }
+.approval-window { padding-top: 110px; }
+.approval-window .wallet-layout { grid-template-columns: 1fr; max-width: 520px; margin: 25px auto 0; }
+.approval-window .intro { display: none; }
+.dapp-actions { margin: 25px 0; text-align: left; }
+@media(max-width:760px) { .wallet-layout { grid-template-columns: 1fr; gap: 30px; } .wallet-main { padding-top: 105px; } .wallet-layout .intro .principles { display: none; } .wallet-layout .intro .app-title { font-size: 42px; } .wallet-balance strong { font-size: 36px; } }
+.next-app,.sign-in-consent { border: 1px solid var(--line); border-radius: 14px; padding: 20px; margin: 25px 0; background: #dcbc9b09; text-align: left; }
+.next-app h3 { font-size: 22px; font-weight: 450; letter-spacing: -.5px; }
+.next-app p,.sign-in-consent p { font-size: 13px; line-height: 1.8; color: var(--muted); }
+.next-app .eyebrow { font-size: 9px; }
+.notes-app .field-help a { color: #e9d2ba; }
+.notes-mark { display: grid; place-items: center; width: 64px; height: 64px; margin: 0 auto 27px; border: 1px solid #e4c6a930; border-radius: 18px; background: #d7b8990d; color: #dcc1a5; }
+.notes-mark svg { width: 34px; height: 34px; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.notebook-header { display: flex; align-items: center; gap: 15px; text-align: left; margin-bottom: 20px; }
+.notebook-header .avatar { width: 48px; height: 48px; flex: none; font-size: 24px; margin: 0; }
+.notebook-header h2 { font-size: 25px; margin: 6px 0; overflow-wrap: anywhere; }
+.notebook-header .small-label { font-size: 8px; }
+.notebook-toolbar { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; margin: 24px 0 12px; }
+.notebook-toolbar>span { font-size: 11px; color: var(--muted); }
+.notebook-toolbar .text-button,.note-actions .text-button { margin: 0; width: auto; padding: 8px 0; }
+.note-list { display: grid; gap: 6px; max-height: 220px; overflow-y: auto; margin-bottom: 24px; }
+.note-list button { display: flex; justify-content: space-between; gap: 12px; align-items: center; border: 1px solid var(--line); border-radius: 8px; padding: 13px; background: var(--surface-inset); color: #dbcdbf; text-align: left; min-width: 0; transition: background 160ms ease, border-color 160ms ease; }
+.note-list button.selected { background: #dcbc9b15; border-color: #dcbc9b65; }
+.note-list button strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; font-weight: 500; }
+.note-list button span { flex: none; font-size: 10px; color: var(--muted); }
+.note-list button:disabled { cursor: default; opacity: .55; }
+.note-editor { text-align: left; }
+.note-editor textarea { min-height: 220px; line-height: 1.7; }
+.note-editor label { display: flex; justify-content: space-between; gap: 10px; }
+.note-actions { display: flex; justify-content: space-between; gap: 12px; }
+.note-provenance { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin: 24px 0; padding: 15px 0; text-align: left; }
+.note-provenance summary { cursor: pointer; font-size: 12px; color: #dfccb8; }
+.note-provenance p,.delete-confirm p { font-size: 12px; line-height: 1.8; color: var(--muted); }
+.note-provenance .secondary { margin: 14px 0; }
+.delete-confirm { background: #b290610c; padding: 15px; border: 1px solid #bb915c38; border-radius: 10px; margin-top: 10px; }
+@media(max-width:760px) { .application-tools { grid-template-columns: 1fr; gap: 34px; } .transaction-progress { flex-wrap: wrap; } .transaction-progress ol { margin-left: 18px; } .receipt dl { gap: 19px; } }

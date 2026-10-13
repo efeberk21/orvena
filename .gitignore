@@ -147,3 +147,13 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# Contract compilation and local development state
+artifacts/
+cache/
+deployments/31337.json
+.local/
+.vercel/
+deployments/integration-31337.json
+deployments/approvals-31337.json
+deployments/approval-integration-31337.json
