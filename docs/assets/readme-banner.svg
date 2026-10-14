@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="560" viewBox="0 0 1440 560" role="img" aria-labelledby="title desc">
+  <title id="title">Orvena — Exact words. Your approval.</title>
+  <desc id="desc">Passkey approvals for AI content, independently verified on Monad. A draft is approved with a passkey and its receipt travels between applications.</desc>
+  <defs>
+    <linearGradient id="base" x2="100%" y2="100%"><stop stop-color="#191817"/><stop offset="1" stop-color="#0e0e0f"/></linearGradient>
+    <radialGradient id="light"><stop stop-color="#c79f7b" stop-opacity=".15"/><stop offset="1" stop-color="#c79f7b" stop-opacity="0"/></radialGradient>
+    <linearGradient id="surface" x2="80%" y2="100%"><stop stop-color="#2b2927"/><stop offset="1" stop-color="#181818"/></linearGradient>
+    <linearGradient id="edge" x2="100%" y2="100%"><stop stop-color="#e1c2a3" stop-opacity=".42"/><stop offset="1" stop-color="#e1c2a3" stop-opacity=".07"/></linearGradient>
+  </defs>
+  <rect width="1440" height="560" rx="28" fill="url(#base)"/>
+  <ellipse cx="1100" cy="240" rx="440" ry="370" fill="url(#light)"/>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <g transform="translate(64 56)">
+      <svg width="44" height="48" viewBox="0 0 40 44" fill="none">
+        <g transform="translate(8.5 7.5) rotate(-18 11.5 14.5)" stroke="#e1c2a3"><rect x=".75" y=".75" width="21.5" height="27.5" rx="10.75" stroke-width="1.5"/><rect x="5.5" y="5.5" width="12" height="18" rx="6"/><path d="M9.5 19.5V11.5a2 2 0 0 1 4 0v8"/></g>
+      </svg>
+      <text x="60" y="36" fill="#f5f0eb" font-size="34" font-weight="600" letter-spacing="-1">orvena</text>
+    </g>
+    <text x="70" y="158" fill="#e1c2a3" font-size="15" font-weight="600" letter-spacing="2.3">PASSKEY APPROVALS FOR AI CONTENT</text>
+    <text x="64" y="244" fill="#f6f3ef" font-size="72" font-weight="600" letter-spacing="-3">Exact words.</text>
+    <text x="64" y="328" fill="#e1c2a3" font-size="72" font-weight="600" letter-spacing="-3">Your approval.</text>
+    <text x="69" y="382" fill="#c1bcb7" font-size="23">Review once. Carry the receipt.</text>
+    <text x="69" y="416" fill="#c1bcb7" font-size="23">Verify the exact version in another app.</text>
+    <line x1="69" y1="461" x2="633" y2="461" stroke="#fff" stroke-opacity=".1"/>
+    <text x="69" y="503" fill="#e3d9cf" font-size="16" font-weight="500">Built on Monad</text>
+    <circle cx="218" cy="498" r="2" fill="#77716c"/>
+    <text x="237" y="503" fill="#99928b" font-size="16">WebAuthn / P256</text>
+    <circle cx="410" cy="498" r="2" fill="#77716c"/>
+    <text x="429" y="503" fill="#99928b" font-size="16">Portable SDK</text>
+    <g transform="translate(839 102)">
+      <rect x="-22" y="-16" width="439" height="348" rx="28" fill="#1a1918" stroke="#d4b596" stroke-opacity=".1" transform="rotate(-5 190 160)"/>
+      <rect width="439" height="348" rx="26" fill="url(#surface)" stroke="url(#edge)"/>
+      <circle cx="33" cy="34" r="4" fill="#e1c2a3"/>
+      <text x="49" y="40" fill="#d9c3ae" font-size="15" font-weight="600" letter-spacing="1.1">EXACT VERSION</text>
+      <text x="31" y="96" fill="#f3eeea" font-size="24" font-weight="500" letter-spacing="-.4">Support hours start on Monday.</text>
+      <rect x="31" y="124" width="341" height="7" rx="3.5" fill="#6f6862" fill-opacity=".6"/>
+      <rect x="31" y="144" width="285" height="7" rx="3.5" fill="#6f6862" fill-opacity=".45"/>
+      <rect x="31" y="164" width="317" height="7" rx="3.5" fill="#6f6862" fill-opacity=".32"/>
+      <line x1="31" y1="202" x2="408" y2="202" stroke="#e1c2a3" stroke-opacity=".13"/>
+      <g transform="translate(31 226)" fill="none" stroke="#e1c2a3" stroke-width="1.8" stroke-linecap="round"><rect x="0" y="11" width="26" height="24" rx="6"/><path d="M6 11V7a7 7 0 0 1 14 0v4M13 21v5"/></g>
+      <text x="76" y="244" fill="#f3eeea" font-size="20" font-weight="500">Confirmed with passkey</text>
+      <text x="76" y="272" fill="#a79f97" font-size="17">Approval verified on Monad</text>
+      <rect x="31" y="299" width="377" height="27" rx="7" fill="#e1c2a3" fill-opacity=".06"/>
+      <text x="219" y="318" text-anchor="middle" fill="#c4b4a5" font-size="13" letter-spacing="1">ONE VERSION · ONE DECISION</text>
+    </g>
+    <path d="M1059 464v14" stroke="#e1c2a3" stroke-opacity=".5" stroke-width="1.5"/>
+    <path d="m1055 475 4 4 4-4" fill="none" stroke="#e1c2a3" stroke-opacity=".5" stroke-width="1.5"/>
+    <text x="1059" y="507" text-anchor="middle" fill="#a79f97" font-size="17">A receipt any integrated app can verify.</text>
+  </g>
+</svg>

@@ -2,6 +2,8 @@
 
 Submitted to Monad Metropolis, **Trust, Identity & AI Infrastructure**. The portal confirmed **Ready for judging** on 14 October 2026. [Submission screenshot](submitted.png).
 
+The description, developer acquisition strategy and judge instructions were revised and resubmitted on 14 October at 03:29 Istanbul time. The portal again confirmed **Ready for judging**. [Updated submission screenshot](submitted-polished.png) · [Review findings](../docs/README-REVIEW.md) · [Judge walkthrough](../docs/JUDGES.md).
+
 - Solo developer: Efeberk Zorlukol.
 - [Live approval app](https://orvena-ashy.vercel.app).
 - [Separate publisher integration](https://orvena-publisher.vercel.app).

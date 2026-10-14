@@ -1,0 +1,8 @@
+{
+  "schema": "orvena.approval.v1",
+  "chainId": 10143,
+  "contract": "0x542ed99e33509dfecc7c4fc2d5293bf427cf91ba",
+  "owner": "0xb0bE7f01e2280d9Fd669d3c45057591f552b8e10",
+  "approvalId": "0xe84284894658bd7dfe45565c521d8a75436d11522940c8e70754c2d875b5bc46",
+  "salt": "0xff5a3e5b2305100cdee105147a460b0bf749ef7144a9eb9be97b0415bb72a928"
+}

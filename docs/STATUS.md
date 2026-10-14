@@ -10,6 +10,8 @@ Device and video delivery complete: real user-confirmed Windows device passkey c
 
 TRACK-PLAN.md maps the product to all five criteria. Implementation completion is distinct from public delivery and recorded-device evidence.
 
+README and submission copy were reviewed against prior Monad winner READMEs and the official current criteria on 14 October 2026. Added an Apple Design-inspired banner using the existing brand mark, an evidence table, explicit Monad/SDK rationale, and a passkey-free judge walkthrough with recorded receipt/content fixtures. The portal accepted the revised description, strategy and instructions at 00:29 UTC (03:29 Istanbul) and again confirmed Ready for judging. Review findings and remaining adoption/licensing/production gaps: docs/README-REVIEW.md.
+
 Final verification: typecheck, contract compilation, 23 automated tests and production builds passed for all application workspaces. The packed SDK was installed in a separate consumer and verified actual testnet revocation and changed-content state without the Orvena API. Windows background demo launcher: scripts/start-demo.ps1; web :5173, publisher :5180, sponsor :3001. Server signing secrets were absent from the built browser assets.
 
 
