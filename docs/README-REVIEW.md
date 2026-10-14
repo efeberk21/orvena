@@ -19,6 +19,7 @@ OwnPay'in üçüncülüğü ve StitchAI'nin beşinciliği [Monad Devs'in 8 Nisan
 | Önceki durum | Neden önemli | Düzeltme |
 | --- | --- | --- |
 | Ürün, protokol ve referans ekranlar iç içe anlatılıyordu. | Jüri bunu yalnızca başka bir passkey login ekranı sanabilir. | Ana ürün onay contract'ı ve SDK; iki web uygulaması referans entegrasyon olarak tanımlandı. |
+| GitHub About özeti eski passkey login/profil ürününü anlatıyordu. | Yeni README ile ilk görülen repo özeti çelişiyordu. | GitHub açıklaması exact-content consent/revocation ve contract + SDK olarak güncellendi; canlı site Website alanına eklendi. |
 | Somut kullanım örneği ilk ekranda yoktu. | Kullanıcı neden ihtiyaç duyacağını çıkaramıyordu. | Onaylanan Monday metninin Tuesday olarak değişmesiyle açık tetikleyici/sonuç örneği eklendi. |
 | Monad seçimi özellik listesi içinde kalıyordu. | Zincirin kullanımı sonradan eklenmiş görünebilir. | Her eylemde WebAuthn/P256, sponsorun imza yerine geçememesi ve uygulamalar arası ortak güncel durum anlatıldı. |
 | “Login/veritabanı bunu yapamaz” anlatımı fazla geneldi. | Tek uygulama güvenilir veritabanıyla onay yönetebilir. | Sorun uygulamalar arasındaki güven ve taşınabilir doğrulama olarak daraltıldı. |
