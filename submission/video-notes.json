@@ -1,0 +1,62 @@
+{
+  "pitchSeconds": 108,
+  "demoSeconds": 153,
+  "audio": false,
+  "edits": "Idle periods shortened; browser chrome cropped; non-product browser/ChatGPT popups masked; explanatory captions added. All product footage is the live application and real user-approved passkey actions. No synthetic product state or audio was added.",
+  "clips": [
+    {
+      "start": 0,
+      "end": 10,
+      "label": "Orvena on Monad testnet",
+      "caption": "A passkey approval for one exact version of AI content."
+    },
+    {
+      "start": 65,
+      "end": 83,
+      "label": "1. Open an approval account",
+      "caption": "The user creates a real passkey with Windows Security. No seed phrase or wallet extension."
+    },
+    {
+      "start": 88,
+      "end": 108,
+      "label": "2. Approve the exact draft",
+      "caption": "A fresh passkey assertion authorizes this version. The sponsor pays testnet gas."
+    },
+    {
+      "start": 122,
+      "end": 142,
+      "label": "3. Verify without logging in",
+      "caption": "The verifier checks exact content, the independently trusted approver and current Monad state."
+    },
+    {
+      "start": 155,
+      "end": 169,
+      "label": "4. Change one word",
+      "caption": "Monday becomes Tuesday. The altered content fails verification."
+    },
+    {
+      "start": 212,
+      "end": 226,
+      "label": "5. Carry the receipt into another app",
+      "caption": "Our separately hosted publisher checks the same JSON receipt before publishing inside the demo."
+    },
+    {
+      "start": 240,
+      "end": 252,
+      "label": "6. Block the changed draft",
+      "caption": "The publisher rejects the altered version. Earlier published content remains visible."
+    },
+    {
+      "start": 273,
+      "end": 301,
+      "label": "7. Revoke with a fresh passkey",
+      "caption": "The owner confirms another device challenge. Monad records the revocation."
+    },
+    {
+      "start": 338,
+      "end": 355,
+      "label": "8. Check again after revocation",
+      "caption": "Even the original version is now revoked. The draft is a prepared example, with no live model."
+    }
+  ]
+}

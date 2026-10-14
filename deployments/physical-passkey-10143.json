@@ -1,0 +1,27 @@
+{
+  "chainId": 10143,
+  "origin": "https://orvena-ashy.vercel.app",
+  "method": "Real user-confirmed Windows device WebAuthn passkey creation, approval and revocation, recorded in Chrome. No synthetic assertion was substituted for these actions.",
+  "content": "Our new support hours start on Monday. You can reach our team between 09:00 and 18:00. Existing requests will continue to receive a response.",
+  "approvalPackage": {
+    "schema": "orvena.approval.v1",
+    "chainId": 10143,
+    "contract": "0x542ed99e33509dfecc7c4fc2d5293bf427cf91ba",
+    "owner": "0xb0bE7f01e2280d9Fd669d3c45057591f552b8e10",
+    "approvalId": "0xe84284894658bd7dfe45565c521d8a75436d11522940c8e70754c2d875b5bc46",
+    "salt": "0xff5a3e5b2305100cdee105147a460b0bf749ef7144a9eb9be97b0415bb72a928"
+  },
+  "approval": {
+    "txHash": "0xe6e251ae8d0cc7530d215b38a5fcb44b0df313fc263bc08ae41de53ffc0caea9",
+    "block": 70816055,
+    "recordedAt": "2026-10-13T23:50:25Z"
+  },
+  "revocation": {
+    "txHash": "0xf7ec0ea7420247494b6b9bb09b47024953f9cabd3d8f72fd6a6573b5ad50ff51",
+    "block": 70816633,
+    "recordedAt": "2026-10-13T23:53:20Z"
+  },
+  "finalStatus": "revoked",
+  "observedChecks": ["original content verified before revocation", "Monday changed to Tuesday rejected", "original receipt accepted by separate publisher before revocation", "changed content blocked by publisher", "original content rejected as revoked after revocation"],
+  "demo": "https://youtu.be/xs9y3Z6uXaM"
+}

@@ -65,6 +65,8 @@ Monad testnet 10143:
 - Public metadata: deployments/approvals-10143.json.
 - [Hosted API integration evidence](deployments/approval-integration-vercel-10143.json): twelve checks and four additional real testnet transactions through the production HTTPS sponsor.
 - Twenty-three passing automated tests, including the Vercel API adapter.
+- [Real device passkey evidence](deployments/physical-passkey-10143.json): Windows device passkey creation, approval and fresh revocation on the final HTTPS origin, with actual Monad transaction hashes. The recorded receipt is now revoked.
+- [Live technical demo (2:33)](https://youtu.be/xs9y3Z6uXaM) and [pitch (1:48)](https://youtu.be/7hhqMcqZgyI), both silent with readable explanations.
 - Four actual sponsored testnet transactions: registration, approval, linked revision and revocation. Twelve integration checks are recorded in deployments/approval-integration-10143.json. Synthetic P256 assertions are not physical authenticator tests.
 
 ## Integration
@@ -92,6 +94,6 @@ Content and random salt remain offchain. Receipt JSON/links share the salt; keep
 
 Approval proves consent to exact bytes by a registered key. It does not prove accuracy, model source, authorship, legal identity or personhood. Your application sets organizational authority and enforces current approval at its actual publication boundary. Revocation cannot recall already shared content; cached valid results can become revoked. Protect the approval origin against malicious code.
 
-Mera's PRF-derived EVM signing key briefly exists in browser memory for registration; the P256 credential key remains with the authenticator. Recovery requires the same credential and supported PRF/provider. Prior registry device tests do not validate this new flow. Public HTTPS hosting and its four-transaction synthetic integration are complete. Physical passkey approve/revoke on the final origin, recorded videos and portal submission remain delivery steps.
+Mera's PRF-derived EVM signing key briefly exists in browser memory for registration; the P256 credential key remains with the authenticator. Recovery requires the same credential and supported PRF/provider. Public HTTPS hosting, its four-transaction synthetic integration and real device passkey approve/revoke on the final origin are complete. The recorded demo distinguishes the actual user device actions from synthetic integration tests. See [judge access instructions and submitted materials](submission/entry.json).
 
 See docs/SECURITY.md, docs/STATUS.md, docs/DEMO.md and docs/DEPLOYMENT-READY.md. No independent adoption or external audit is claimed.

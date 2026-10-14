@@ -20,5 +20,5 @@ Introduce the actual team. AI tools often keep approvals as platform-local mutab
 
 Initial customers: AI support-response and company-publication tool developers. Their own systems decide organizational authority; our SDK supplies cryptographic consent, replay protection and revocation. Possible services: managed sponsorship and integration support, preserving open verification.
 
-Evidence: live Monad contract, tested SDK/sponsor, real testnet approve/revise/revoke and our separate-origin publisher. Claim independent interest only if obtained. Next: physical device validation, three targeted developer pilots, sponsor operations and security review.
+Evidence: live Monad contract, tested SDK/sponsor, real testnet approve/revise/revoke, user-confirmed Windows device passkey approval/revocation on the final HTTPS origin, and our separate-origin publisher. Claim independent interest only if obtained. Next: three targeted developer pilots, sponsor operations and security review. Final silent videos: [live technical demo, 2:33](https://youtu.be/xs9y3Z6uXaM) and [pitch, 1:48](https://youtu.be/7hhqMcqZgyI).
 

@@ -6,7 +6,7 @@ Orvena is an immutable approval contract and TypeScript SDK on Monad. Fresh WebA
 
 Mera reconstructs the EVM account for public-key enrollment. Every approve/revoke still requires a separate action-bound P256 assertion. Nonce, deadline, chain and contract protect against reuse; sponsor routing cannot alter signed fields or call arbitrary destinations. Readers work without that sponsor or the platform database.
 
-Approval contract: 0x542ed99e33509dfecc7c4fc2d5293bf427cf91ba. Twenty-three automated tests and a real four-transaction testnet integration demonstrate positive/negative behavior with synthetic P256 fixtures. Physical passkey checks remain separate. The publisher is our reference integration, not independent adoption.
+Approval contract: 0x542ed99e33509dfecc7c4fc2d5293bf427cf91ba. Twenty-three automated tests and real testnet integrations demonstrate positive/negative behavior with synthetic P256 fixtures. Separate real user-confirmed Windows device passkey creation, approval and revocation on the final HTTPS origin are recorded in deployments/physical-passkey-10143.json and the submitted video. The publisher is our reference integration, not independent adoption.
 
 First customers are developers of AI-assisted support responses and company publishing. They retain organizational authorization policy while integrating our consent/provenance/revocation primitive. Optional managed sponsorship/support can fund operations without centralizing verification.
 

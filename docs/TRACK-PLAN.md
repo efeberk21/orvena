@@ -12,7 +12,7 @@ AI taslağı hazırlar; kullanıcı tam sürümü passkey ile onaylar; yayınlay
 
 | Kriter | Uygulanan karşılık ve kanıt |
 | --- | --- |
-| Teknik uygulama %20 | Her approve/revoke için içeriğe/eyleme bağlı WebAuthn/P256; nonce, süre, chain/contract; yanlış key/RP/origin, değişmiş içerik ve replay testleri; yirmi test; dört gerçek testnet işlemi |
+| Teknik uygulama %20 | Her approve/revoke için içeriğe/eyleme bağlı WebAuthn/P256; nonce, süre, chain/contract; yanlış key/RP/origin, değişmiş içerik ve replay testleri; 23 test; fiziksel cihaz approve/revoke ve ayrı synthetic testnet işlemleri |
 | Design & Craft %20 | requestContentApproval ve createApprovalReader SDK; açık doğrulama durumları; kısa rehber; başka origin'de yayınlama örneği; bağımsız Node consumer testi |
 | Özgünlük ve track uyumu %15 | Platform veritabanından bağımsız, iptal edilebilir ve sürüm bağlantılı hesap onayı; salt'lı commitment; zincire gönderilmeyen içerik; kullanıcıda taşınabilir makbuz |
 | Müşteri ve pazar %25 | AI yayınlama/müşteri yanıtı uygulaması geliştiricileri; onay sonrası değişmiş metni engelleme ihtiyacı; kendi WebAuthn/provenance/revocation altyapısını kurmama gerekçesi |
@@ -34,10 +34,10 @@ Son teslim: **14 Ekim 2026 06:59 Türkiye saati**. Zorunlu: 3 MB altı logo, pub
 - [x] SDK, yayınlama entegrasyonu ve kısa dokümantasyon.
 - [x] Yerel ve testnet HTTP integration; synthetic P256 olduğu açıkça belirtiliyor.
 - [x] Orijinal CSS, 3D kilit animasyonu, timeline ve geometri korunuyor.
-- [ ] Kullanıcı tarafından fiziksel passkey onay/iptal denemesi.
-- [ ] Final HTTPS domaini ve fiziksel cihazda tekrar kontrol.
-- [ ] Public GitHub'daki son kod ve canlı ürün linki.
-- [ ] Uygun format/boyuttaki logo ve demo/pitch kayıtları.
-- [ ] Portal takım/proje/track seçimi ve teslim.
+- [x] Kullanıcı tarafından fiziksel passkey onay/iptal denemesi.
+- [x] Final HTTPS domaini ve fiziksel cihazda tekrar kontrol.
+- [x] Public GitHub'daki son kod ve canlı ürün linki.
+- [x] Uygun format/boyuttaki logo ve demo/pitch kayıtları.
+- [x] Portal takım/proje/track seçimi ve teslim: Trust, Identity & AI Infrastructure; 14 Ekim 2026, portal durumu Ready for judging.
 
 Protokolün güvenlik sınırları SECURITY.md; cihaz kontrolü PASSKEY-SUPPORT.md; demo/pitch senaryosu DEMO.md içinde. Hassas içerik ve makbuz salt'ı paylaşımı ayrı gizlilik sorunudur. Passkey origininin güvenilirliği ve uygulamanın yayınlama sınırında güncel kontrolü uygulaması gerekir.
